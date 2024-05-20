@@ -63,7 +63,7 @@ function setTable() {
   let tbody = table.getElementsByTagName('tbody')[0];
   tbody.innerHTML = ''; // Me aseguro que esté vacio, hago referencia al agregar otro
 
-  const rows = ["id", "titulo", "transaccion", "descripcion", "precio", "puertas", "kms", "potencia"];
+  const rows = ["id", "nombre", "fecha", "simbolo", "precio", "dropdownCurrency", "cantidad", "dropdownType", "sitioweb"];
 
   items.forEach((item) => {
     let newRow = document.createElement("tr");
