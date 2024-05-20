@@ -1,0 +1,73 @@
+.container-table {
+    width: 100%;
+    justify-content: center;
+}
+
+.container-table table {
+    width: 75%;
+    justify-content: center;
+
+    flex-direction: column;
+}
+
+.container-table table thead {
+    width: 100%;
+}
+
+.container-table table tr {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem;
+    font-size: 14px;
+}
+
+.table-stripped thead tr:nth-child(odd) {
+    background-color: #f33d3d;
+    /* seteo el color del header de la table!  */
+}
+
+.table-stripped tbody tr:nth-child(even) {
+    background-color: #666feb;
+    /* seteo el color de las rows que sean pares  */
+}
+
+.table-stripped tbody tr:nth-child(odd) {
+    background-color: #ffffff;
+    /* seteo el color de las rows que sean impares  */
+}
+
+.table-stripped thead tr:nth-child(1) {
+    width: 100%;
+}
+
+
+
+.table-stripped tbody {
+    td:nth-child(1){  /* ID  */
+        width: 10%;
+    }
+    td:nth-child(2){ /* titulo  */
+        width: 10%;
+    }
+    td:nth-child(3){ /* transaccion  */
+        width: 10%;
+    }
+    td:nth-child(4){ /* descripcion  */
+        width: 15%;
+    }
+    td:nth-child(5){ /* precio  */
+        width: 10%;
+    }
+    td:nth-child(6){ /* puertas  */
+        width: 10%;
+    }
+    td:nth-child(7){ /* kms  */
+        width: 10%;
+    }
+    td:nth-child(8){ /* potencia  */
+        width: 5%;
+    }
+}
+
+
+

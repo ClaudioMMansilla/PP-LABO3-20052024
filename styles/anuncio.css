@@ -1,0 +1,10 @@
+
+section .anuncio{
+    padding-top: 50px;
+    padding-bottom: 50px;
+
+    flex-wrap: wrap;
+    justify-content: center;
+
+    width: 100vw;
+}

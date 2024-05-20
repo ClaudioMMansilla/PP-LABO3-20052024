@@ -1,0 +1,109 @@
+
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-family: poppins, sans-serif;
+    padding: 20px 20px;
+    height: 50vh;
+    background-color: grey;
+    /* si se rompiera la img*/
+    background-image: url(../assets/images/background.jpeg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 100vw 90vh;
+    /* centro el foco de la imagen */
+}
+
+
+footer {
+    width: 100%;
+    height: 10vh;
+    padding: 4rem 1rem;
+
+    align-items: center;
+    justify-content: space-between;
+
+    color: white;
+    background: rgb(0, 0, 0);
+    font-family: poppins, sans-serif;
+}
+
+
+.nav {
+    display: flex;
+    padding-top: 10px;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+header h1 {
+    color: white;
+    width: 700px;
+    font-size: 50px;
+}
+
+
+header nav ul,
+footer nav ul {
+    text-decoration: none;
+    list-style-type: none;
+
+    flex-direction: row;
+    justify-content: right;
+
+    gap: 1rem;
+}
+
+header nav ul a,
+footer nav ul a {
+    color: white;
+    text-decoration: none;
+    margin-right: 20px;
+    font-size: 20px;
+}
+
+
+/* Cambiar el color del texto de los elementos li dentro de ul.flex a blanco */
+.flex li {
+    color: white;
+}
+
+/* Además, es recomendable también cambiar el color de los enlaces dentro de los elementos li */
+.flex li a {
+    color: white;
+}
+
+/* Media Query para pantallas más pequeñas */
+@media screen and (max-width: 760px) {
+    header {
+        height: auto;
+        /* Cambio la altura a automática para adaptarse al contenido */
+        align-items: center;
+        /* Alineo los elementos al centro */
+        text-align: center;
+        /* Centrar el texto */
+        background-image: none;
+        background: green;
+    }
+
+    header h1 {
+        font-size: 1.5rem;
+        /* Reduzco el tamaño del título para pantallas pequeñas */
+        width: auto;
+        /* Cambio el ancho a automático para adaptarse al contenido */
+    }
+
+    .nav {
+        flex-direction: column;
+        /* Cambio la dirección a columna para apilar los elementos */
+    }
+
+    /* Estilos para los elementos de la lista de navegación en pantallas pequeñas */
+    .nav li {
+        margin: 0.5rem 0;
+        /* Espaciado entre elementos */
+    }
+
+    
+}

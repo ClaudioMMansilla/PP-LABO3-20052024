@@ -1,0 +1,21 @@
+form {
+  gap: 1rem;
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+  /* max-width: 300px; */
+
+  padding: 1rem;
+  border-radius: 10px;
+  background: whitesmoke;
+}
+
+.form-group {
+  gap: 1rem;
+  align-items: center;
+  justify-content: space-between;
+
+  /* width: 100%;
+  max-width: 260px; */
+}
