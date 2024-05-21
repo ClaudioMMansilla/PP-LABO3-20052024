@@ -100,6 +100,7 @@ function getForm() {
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
 
+    // 
     const model = new Crypto(
       Date.now(),
       form.nombre.value,
@@ -152,34 +153,6 @@ function setForm(data) {
   form.sitioweb.value = data[8].innerText;
 }
 
-
-function handleDeleteAll() {
-  const btn = document.getElementById("btnLimpiar");
-
-  btn.addEventListener("click", async (e) => {
-
-    const userAnswer = confirm('Desea eliminar todos los Items?');
-
-    if (userAnswer) {
-      items.splice(0, items.length);
-
-      try {
-        await clear(KEY_STORAGE);
-        
-        showSpinner(FAKE_DELAY);
-        setTimeout(()=>{
-          resetForm(); 
-          setTable();
-        }, FAKE_DELAY); 
-      }
-      catch (error) {
-        alert(error);
-      }
-    }
-  });
-}
-
-
 function btnIsVisible(isVisible) {
   if (isVisible) {
     btnGuardar.setAttribute("class", "oculto");
@@ -228,3 +201,29 @@ function handleDelete() {
   });
 }
 
+
+function handleDeleteAll() {
+  const btn = document.getElementById("btnLimpiar");
+
+  btn.addEventListener("click", async (e) => {
+
+    const userAnswer = confirm('Desea eliminar todos los Items?');
+
+    if (userAnswer) {
+      items.splice(0, items.length);
+
+      try {
+        await clear(KEY_STORAGE);
+        
+        showSpinner(FAKE_DELAY);
+        setTimeout(()=>{
+          resetForm(); 
+          setTable();
+        }, FAKE_DELAY); 
+      }
+      catch (error) {
+        alert(error);
+      }
+    }
+  });
+}
