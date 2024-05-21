@@ -24,6 +24,7 @@ function onInit() {
   // escuchandoBtnDeleteAll();
   handleCancellation();
   handleDelete();
+  handleDeleteAll();
 }
 
 
@@ -100,9 +101,9 @@ function getForm() {
     e.preventDefault();
 
     const model = new Crypto(
-      form.id.value,
+      Date.now(),
       form.nombre.value,
-      Date.now().toString,
+      Date.now(),
       form.simbolo.value,
       form.precio.value,
       form.dropdownCurrency.value,
@@ -152,8 +153,8 @@ function setForm(data) {
 }
 
 
-function escuchandoBtnDeleteAll() {
-  const btn = document.getElementById("btn-delete-all");
+function handleDeleteAll() {
+  const btn = document.getElementById("btnLimpiar");
 
   btn.addEventListener("click", async (e) => {
 
@@ -164,7 +165,12 @@ function escuchandoBtnDeleteAll() {
 
       try {
         await clear(KEY_STORAGE);
-        setTable();
+        
+        showSpinner(FAKE_DELAY);
+        setTimeout(()=>{
+          resetForm(); 
+          setTable();
+        }, FAKE_DELAY); 
       }
       catch (error) {
         alert(error);
