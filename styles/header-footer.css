@@ -1,6 +1,6 @@
 
 header {
-    display: flex;
+    /* display: flex; */
     flex-direction: column;
     justify-content: space-between;
     font-family: poppins, sans-serif;
@@ -11,7 +11,7 @@ header {
     background-image: url(../assets/images/background.jpeg);
     background-repeat: no-repeat;
     background-position: center center;
-    background-size: 100vw 90vh;
+    background-size: 100vw 100vh;
     /* centro el foco de la imagen */
 }
 
@@ -35,12 +35,22 @@ footer {
     padding-top: 10px;
     flex-direction: row;
     justify-content: space-between;
+    background-color: rgba(255, 255, 255, 0.1); /* Fondo blanco con opacidad */
+    border-radius: 5px;
 }
 
 header h1 {
     color: white;
-    width: 700px;
-    font-size: 50px;
+    width: 200px;
+    font-size: 30px;
+}
+
+header img{
+    width: 50px;
+}
+
+.nav b{
+    color: white;
 }
 
 
@@ -60,7 +70,7 @@ footer nav ul a {
     color: white;
     text-decoration: none;
     margin-right: 20px;
-    font-size: 20px;
+    font-size: 16px;
 }
 
 

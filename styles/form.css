@@ -1,21 +1,40 @@
-form {
-  gap: 1rem;
-  display: flex;
-  flex-direction: column;
+fieldset {
+  border-width: 0;
+}
 
-  width: 100%;
-  /* max-width: 300px; */
-
-  padding: 1rem;
-  border-radius: 10px;
-  background: whitesmoke;
+h2 {
+  color: darkblue;
+  padding: 10px 10px;
 }
 
 .form-group {
-  gap: 1rem;
-  align-items: center;
-  justify-content: space-between;
+  display: flexbox;
+  padding: 1rem;
+  background: whitesmoke;
+  /* border-radius: 10px;
+  border: solid 2px gainsboro; */
+  justify-content: space-around;
+  width: 40vw;
+}
 
-  /* width: 100%;
-  max-width: 260px; */
+.inputs-styler {
+  /* border: none; */
+  margin: 10px;
+  padding-left: 5px;
+  background-color: rgba(126, 201, 241, 0.4);
+  border-radius: 10px;
+  border: 1px solid darkblue; /* Define un borde de grosor y color */
+}
+
+.form-fields-container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 10px;
+  color: darkblue;
+}
+
+
+.btnFrm input{
+  padding: 5px 5px;
 }

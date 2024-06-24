@@ -9,12 +9,32 @@ class Crypto extends CryptoBase{
         this.sitioWeb = sitioWeb;
     }
 
-    verify() {
-        return this.checkNombre();
+    verify(nombre, simbolo, precioActual, cantidad, sitioWeb) {
+
+        if(super.verify(nombre, simbolo, precioActual) &&
+        this.checkCantidad(cantidad) && 
+        this.checkSitioweb(sitioWeb) 
+        ){
+            return true;
+        } else {return false; }
     }
 
-    checkNombre() {
-        return nombre != null && nombre != "";
+    checkCantidad(cantidad) {
+        if(cantidad != null && parseInt(cantidad) >0){
+            return true;
+        } else { 
+            alert("El campo 'cantidad' es inválido, verifique datos (debe ser mayor a cero)");
+            return false;
+        }
+    }
+
+    checkSitioweb(sitioWeb) {
+        if(sitioWeb != null && sitioWeb.length >0 && sitioWeb.length <31){
+            return true;
+        } else { 
+            alert("El campo 'Sitio Web' es inválido, verifique datos (máx 30 carácteres)");
+            return false;
+        }
     }
 
 

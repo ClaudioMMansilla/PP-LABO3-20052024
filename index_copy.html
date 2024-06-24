@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="stylesheet" href="./styles/normalize.css" />
+  <link rel="stylesheet" href="./styles/index.css" />
+  <link rel="stylesheet" href="./styles/header-footer.css" />
+  <link rel="stylesheet" href="./styles/form.css" />
+  <link rel="stylesheet" href="./styles/fieldset.css" />
+  <link rel="stylesheet" href="./styles/table.css" />
+  <link rel="icon" type="image/x-icon" href="assets/images/logo.svg" />
+
+  <script src="./js/index.js" type="module" defer></script>
+
+  <title>Simulador Primer Parcial</title>
+</head>
+
+<body>
+  <header class="flex">
+    <div class="nav flex">
+      <div>
+        <img src="./assets/images/logo.svg" alt="Logo Principal" />
+        <b>Matias Mansilla</b>
+      </div>
+      <nav>
+        <ul class="flex">
+          <li><a href="#">Nosotros</a></li>
+          <li><a href="#">Anuncio</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+    <h1>Administrador de Monedas</h1>
+  </header>
+
+  <section class="center">
+    <fieldset class="center">
+      <legend>Información de la Moneda</legend>
+      <form form action="" method="post" id="form-group" class="form-group">
+        <div>
+          <input id="id" type="text" name="id" hidden>
+          <input id="fecha" type="date" name="fecha" hidden>
+          <div class="form-fields-container">
+            <h3>Nombre:</h3>
+            <input id="nombre" type="text" name="nombre" placeholder="Ingrese nombre..." required>
+          </div>
+          <div class="form-fields-container">
+            <h3>Simbolo:</h3>
+            <input id="simbolo" type="text" name="simbolo" placeholder="Ingrese simbolo..." required>
+          </div>
+          <div class="form-fields-container">
+            <h3>Precio Actual (USD):</h3>
+            <input id="precio" type="number" name="precio" placeholder="Ingrese precio..." required>
+          </div>
+          <div class="form-fields-container">
+            <h3>Tipo de Consenso:</h3>
+            <select id="dropdownCurrency" name="dropdownCurrency" required>
+              <option value="option1" checked>Proof of Work</option>
+              <option value="option2">Proof of Stake </option>
+            </select>
+          </div>
+          <div class="form-fields-container">
+            <h3>Cantidad en Circulación:</h3>
+            <input id="cantidad" type="number" name="cantidad" placeholder="Ingrese cantidad..." required>
+          </div>
+          <div class="form-fields-container">
+            <h3>Algoritmo:</h3>
+            <select id="dropdownType" name="dropdownType" required>
+              <option value="option1" checked>SHA-256</option>
+              <option value="option2">Ethash</option>
+              <option value="option3">Scrypt</option>
+              <option value="option4">X11 </option>
+            </select>
+          </div>
+          <div class="form-fields-container">
+            <h3>Sitio Web Oficial:</h3>
+            <input id="sitioweb" type="text" name="sitioweb" placeholder="Ingrese sitio..." required>
+          </div>
+          <div class="form-fields-container">
+            <div class="btnFrm">
+              <input id="btnGuardar" type="submit" value="Guardar">
+              <input id="btnEliminar" type="button" value="Eliminar" class="oculto">
+              <input id="btnCancelar" type="button" value="Cancelar" class="oculto">
+              <input id="btnEditar" type="button" value="Editar" class="oculto">
+            </div>
+          </div>
+        </div>
+      </form>
+    </fieldset>
+  </section>
+
+  <!-- <div id="spinner" class="spinner">
+    <img src="./assets/images/logo.svg" alt="Spinner" class="spinner-img">
+  </div> -->
+
+  <div id="spinner-container" class="spinner-container center"></div>
+
+  <section>
+    <div class="btn-limpiar-container">
+      <input id="btnLimpiar" type="button" value="Borrar Todo">
+    </div>
+    <div class="container-table flex center">
+      <table id="table-items" class="table-items table-stripped flex">
+        <thead>
+          <tr class="flex">
+            <!-- <th>ID</th> -->
+            <th>Nombre</th>
+            <th>Simbolo</th>
+            <th>Fecha Creación</th>
+            <th>Precio Actual</th>
+            <th>Consenso</th>
+            <th>Cantidad Circulación</th>
+            <th>Algoritmo</th>
+            <th>Sitio Web</th>
+          </tr>
+        </thead>
+        <tbody class="tbody"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <footer class="flex">
+    <nav>
+      <ul class="flex">
+        <li><a href="#">Nosotros</a></li>
+        <li><a href="#">Anuncio</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Contacto</a></li>
+      </ul>
+    </nav>
+
+    <p>Todos los derechos reservados <date>2021</date> &copy;</p>
+  </footer>
+</body>
+
+</html>

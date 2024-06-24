@@ -9,8 +9,9 @@
   <link rel="stylesheet" href="./styles/index.css" />
   <link rel="stylesheet" href="./styles/header-footer.css" />
   <link rel="stylesheet" href="./styles/form.css" />
-  <link rel="stylesheet" href="./styles/fieldset.css" />
   <link rel="stylesheet" href="./styles/table.css" />
+  <link rel="stylesheet" href="./styles/buttons.css" />
+  <link rel="stylesheet" href="./styles/spinner.css">
   <link rel="icon" type="image/x-icon" href="assets/images/logo.svg" />
 
   <script src="./js/index.js" type="module" defer></script>
@@ -21,7 +22,10 @@
 <body>
   <header class="flex">
     <div class="nav flex">
-      <img src="./assets/images/logo.svg" alt="Logo Principal" />
+      <div>
+        <img src="./assets/images/logo.svg" alt="Logo Principal" />
+        <b>Matias Mansilla</b>
+      </div>
       <nav>
         <ul class="flex">
           <li><a href="#">Nosotros</a></li>
@@ -35,76 +39,88 @@
   </header>
 
   <section class="center">
-    <fieldset class="center">
-      <legend>Información de la Moneda</legend>
+    <fieldset class="fieldset-container">
+      <!-- <legend>Información de la Moneda</legend> -->
       <form form action="" method="post" id="form-group" class="form-group">
         <div>
-          <input id="id" type="text" name="id" hidden>
-          <input id="fecha" type="date" name="fecha" hidden>
+          <!-- <input id="id" type="text" name="id" hidden>
+          <input id="fecha" type="date" name="fecha" hidden> -->
+          <input id="id" type="text" name="id" style="display: none;">
+          <input id="fecha" type="date" name="fecha" style="display: none;">
+          <h2 class="center">Información de la Moneda</h2>
           <div class="form-fields-container">
-            <h3>Nombre:</h3>
-            <input id="nombre" type="text" name="nombre" placeholder="Ingrese nombre..." required>
+            <label for="nombre">Nombre</label>
+            <input class="inputs-styler" id="nombre" type="text" name="nombre" placeholder="Ingrese nombre..." required>
           </div>
           <div class="form-fields-container">
-            <h3>Simbolo:</h3>
-            <input id="simbolo" type="text" name="simbolo" placeholder="Ingrese simbolo..." required>
+            <label for="simbolo">Simbolo</label>
+            <input class="inputs-styler" id="simbolo" type="text" name="simbolo" placeholder="Ingrese simbolo..."
+              required>
           </div>
           <div class="form-fields-container">
-            <h3>Precio Actual (USD):</h3>
-            <input id="precio" type="number" name="precio" placeholder="Ingrese precio..." required>
+            <label for="precio">Precio Actual (USD)</label>
+            <input class="inputs-styler" id="precio" type="number" name="precio" placeholder="Ingrese precio..."
+              required>
           </div>
           <div class="form-fields-container">
-            <h3>Tipo de Consenso:</h3>
-            <select id="dropdownCurrency" name="dropdownCurrency" required>
-              <option value="option1" checked>Proof of Work</option>
-              <option value="option2">Proof of Stake </option>
+            <label for="dropdownCurrency">Tipo de Consenso</label>
+            <select class="inputs-styler" id="dropdownCurrency" name="dropdownCurrency" required>
+                <!-- el primer <option> tiene un valor vacío y está deshabilitado (disabled).
+                También tiene los atributos selected y hidden para asegurarse de que
+                aparezca como el primer elemento en la lista y no se pueda seleccionar -->
+              <option value="" disabled selected hidden>Seleccione</option>
+              <option value="Proof of Work">Proof of Work</option>
+              <option value="Proof of Stake">Proof of Stake</option>
             </select>
           </div>
           <div class="form-fields-container">
-            <h3>Cantidad en Circulación:</h3>
-            <input id="cantidad" type="number" name="cantidad" placeholder="Ingrese cantidad..." required>
+            <label for="cantidad">Cantidad en circulación</label>
+            <input class="inputs-styler" id="cantidad" type="number" name="cantidad" placeholder="Ingrese cantidad..."
+              required>
           </div>
           <div class="form-fields-container">
-            <h3>Algoritmo:</h3>
-            <select id="dropdownType" name="dropdownType" required>
-              <option value="option1" checked>SHA-256</option>
-              <option value="option2">Ethash</option>
-              <option value="option3">Scrypt</option>
-              <option value="option4">X11 </option>
+            <label for="dropdownType">Algoritmo</label>
+            <select class="inputs-styler" id="dropdownType" name="dropdownType" required>
+              <option value="" disabled selected hidden>Seleccione</option>
+              <option value="SHA-256">SHA-256</option>
+              <option value="Ethash">Ethash</option>
+              <option value="Scrypt">Scrypt</option>
+              <option value="X11">X11 </option>
             </select>
           </div>
           <div class="form-fields-container">
-            <h3>Sitio Web Oficial:</h3>
-            <input id="sitioweb" type="text" name="sitioweb" placeholder="Ingrese sitio..." required>
+            <label for="sitioweb">Sitio Web Oficial</label>
+            <input class="inputs-styler" id="sitioweb" type="text" name="sitioweb" placeholder="Ingrese sitio..."
+              required>
           </div>
-          <div class="form-fields-container">
-            <div class="btnFrm">
+          <div class="buttons-container">
+            <div class="btn btnFrm">
               <input id="btnGuardar" type="submit" value="Guardar">
               <input id="btnEliminar" type="button" value="Eliminar" class="oculto">
               <input id="btnCancelar" type="button" value="Cancelar" class="oculto">
               <input id="btnEditar" type="button" value="Editar" class="oculto">
             </div>
-
-          </div> 
+          </div>
+        </div>
       </form>
     </fieldset>
   </section>
 
-  <!-- <div id="spinner" class="spinner">
+  <div id="spinner" class="spinner">
     <img src="./assets/images/logo.svg" alt="Spinner" class="spinner-img">
-  </div> -->
+  </div>
 
-  <div id="spinner-container" class="spinner-container center"></div>
+  <!-- <div id="spinner-container" class="spinner-container center"></div> -->
 
-  <section>
-    <div class="btn-limpiar-container">
-      <input id="btnLimpiar" type="button" value="Borrar Todo">
-    </div>
-    <div class="container-table flex center">
-      <table id="table-items" class="table-items table-stripped flex">
+  <section class="center">
+    <div class="center flex-column container-table">
+      <div class="btn btnLimpiar">
+        <input id="btnLimpiar" type="button" value="Borrar Todo">
+      </div>
+      <table id="table-items">
         <thead>
-          <tr class="flex">
-            <!-- <th>ID</th> -->
+          <tr>
+            <th class="">ID</th>
             <th>Nombre</th>
             <th>Simbolo</th>
             <th>Fecha Creación</th>
